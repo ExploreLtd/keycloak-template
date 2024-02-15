@@ -1,16 +1,40 @@
-
 .my-color {
-	color: red;
+  color: red;
 }
 
 .my-font {
-	font-family: 'Work Sans';
+  font-family: "Work Sans";
 }
 
 .my-root-class {
-	background: white;
+  background: white;
 }
 
 .my-root-class body {
-	background: url(./assets/background.svg) no-repeat center center fixed;
+  background: none;
+  background-color: #ffffff;
 }
+
+.test {
+  background-color: #a024d5;
+  width: 100%;
+  background-color: #a024d5;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: OpenSansBold;
+  font-size: 14px;
+  height: 60px;
+  margin-bottom: 16px;
+}
+
+/* .test-input {
+  background-color: #0000000a !important;
+  border: none !important;
+  font-size: 14px !important;
+  color: #000 !important;
+  font-family: OpenSansRegular;
+  border-radius: 11px !important;
+  height: 60px !important;
+  padding: 20px 30px !important;
+} */
