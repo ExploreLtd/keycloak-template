@@ -3,7 +3,7 @@
 }
 
 .my-font {
-  font-family: "Work Sans";
+  font-family: "Open Sans";
 }
 
 .my-root-class {
@@ -22,7 +22,6 @@
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-family: OpenSansBold;
   font-size: 14px;
   height: 60px;
   margin-bottom: 16px;
