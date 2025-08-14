@@ -24,8 +24,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
             `${url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly-additions.min.css`,
             `${url.resourcesPath}/css/account.css`
         ],
-        "htmlClassName": getClassName("kcHtmlClass"),
-        "bodyClassName": clsx("admin-console", "user", getClassName("kcBodyClass"))
+        "htmlClassName": clsx(getClassName("kcHtmlClass"), "my-root-account-class"),
+        "bodyClassName": clsx("admin-console", "user", getClassName("kcBodyClass"), "my-root-account-class")
     });
 
     if (!isReady) {

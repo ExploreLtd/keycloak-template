@@ -43,8 +43,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
       `${url.resourcesCommonPath}/lib/zocial/zocial.css`,
       `${url.resourcesPath}/css/login.css`,
     ],
-    htmlClassName: getClassName("kcHtmlClass"),
-    bodyClassName: getClassName("kcBodyClass"),
+    htmlClassName: clsx(getClassName("kcHtmlClass"), "my-root-class"),
+    bodyClassName: clsx(getClassName("kcBodyClass"), "my-font"),
   });
 
   useState(() => {
