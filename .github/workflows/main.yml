@@ -13,11 +13,11 @@ jobs:
         node-version: [20.11.1]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       name: Checkout code
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
@@ -29,7 +29,7 @@ jobs:
       run: yarn build-keycloak-theme
 
     - name: Archive production artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: keycloak-theme-jar
         path: dist_keycloak/target/keycloakify-starter-keycloak-theme-6.0.2.jar
@@ -38,7 +38,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: keycloak-theme-jar
 
@@ -46,7 +46,7 @@ jobs:
         run: mv keycloakify-starter-keycloak-theme-6.0.2.jar keycloak-theme.jar
 
       - name: Publish Jar to GitHub Releases
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: './keycloak-theme.jar'
           tag_name: ${{ github.ref_name }}
