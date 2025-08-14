@@ -1,7 +1,7 @@
 {
   "name": "keycloakify-starter",
   "homepage": "https://starter.keycloakify.dev",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "description": "A starter/demo project for keycloakify",
   "repository": {
     "type": "git",
@@ -24,7 +24,11 @@
     "keycloakVersionTargets": {
       "21": "keycloak",
       "23": "keycloak.v2"
-    }
+    },
+    "themeTypes": [
+      "login",
+      "account"
+    ]
   },
   "author": "u/garronej",
   "license": "MIT",
