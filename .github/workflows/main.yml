@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: keycloak-theme-jar
-          path: dist_keycloak/target/keycloakify-starter-keycloak-theme-6.0.5.jar
+          path: dist_keycloak/target/keycloakify-starter-keycloak-theme-6.0.6.jar
 
   publish:
     needs: build
@@ -43,7 +43,7 @@ jobs:
           name: keycloak-theme-jar
 
       - name: Rename JAR file
-        run: mv keycloakify-starter-keycloak-theme-6.0.5.jar keycloak-theme.jar
+        run: mv keycloakify-starter-keycloak-theme-6.0.6.jar keycloak-theme.jar
 
       - name: Publish Jar to GitHub Releases
         uses: softprops/action-gh-release@v2
