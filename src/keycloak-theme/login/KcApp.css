@@ -95,7 +95,10 @@ label {
 .btn-primary,
 .btn-lg,
 input[type="submit"],
-button[type="submit"] {
+button[type="submit"],
+.btn.btn-primary,
+.pf-c-button.pf-m-primary,
+button.pf-c-button {
   background-color: var(--primary-color) !important;
   border: none !important;
   border-radius: 8px !important;
@@ -114,7 +117,10 @@ button[type="submit"] {
 .btn-primary:hover,
 .btn-lg:hover,
 input[type="submit"]:hover,
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+.btn.btn-primary:hover,
+.pf-c-button.pf-m-primary:hover,
+button.pf-c-button:hover {
   background-color: var(--primary-hover) !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 12px rgba(160, 36, 213, 0.25) !important;
@@ -123,7 +129,10 @@ button[type="submit"]:hover {
 .btn-primary:active,
 .btn-lg:active,
 input[type="submit"]:active,
-button[type="submit"]:active {
+button[type="submit"]:active,
+.btn.btn-primary:active,
+.pf-c-button.pf-m-primary:active,
+button.pf-c-button:active {
   transform: translateY(0) !important;
 }
 
@@ -298,6 +307,39 @@ input[type="submit"]:disabled,
 button[type="submit"]:disabled {
   opacity: 0.6 !important;
   cursor: not-allowed !important;
+}
+
+/* IDP Link Confirm Page - Force purple buttons */
+#kc-register-form button,
+#kc-idp-review-profile-form button,
+form button[name="submitAction"] {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: var(--white) !important;
+  font-family: var(--font-family-base) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  height: 48px !important;
+  padding: 12px 24px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  margin-top: 1rem !important;
+}
+
+#kc-register-form button:hover,
+#kc-idp-review-profile-form button:hover,
+form button[name="submitAction"]:hover {
+  background-color: var(--primary-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(160, 36, 213, 0.25) !important;
+}
+
+#kc-register-form button:active,
+#kc-idp-review-profile-form button:active,
+form button[name="submitAction"]:active {
+  transform: translateY(0) !important;
 }
 
 /* Focus Visible for Accessibility */
