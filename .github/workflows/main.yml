@@ -28,11 +28,22 @@ jobs:
       - name: Build Keycloak theme
         run: yarn build-keycloak-theme
 
+      - name: Get version from package.json
+        id: package-version
+        run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         with:
           name: keycloak-theme-jar
-          path: dist_keycloak/target/keycloakify-starter-keycloak-theme-6.0.6.jar
+          path: dist_keycloak/target/*.jar
+
+      - name: Set version output
+        id: version
+        run: echo "version=${{ steps.package-version.outputs.VERSION }}" >> $GITHUB_OUTPUT
+
+    outputs:
+      version: ${{ steps.package-version.outputs.VERSION }}
 
   publish:
     needs: build
@@ -43,14 +54,16 @@ jobs:
           name: keycloak-theme-jar
 
       - name: Rename JAR file
-        run: mv keycloakify-starter-keycloak-theme-6.0.6.jar keycloak-theme.jar
+        run: |
+          JAR_FILE=$(ls *.jar | head -n 1)
+          mv "$JAR_FILE" keycloak-theme.jar
 
       - name: Publish Jar to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
           files: "./keycloak-theme.jar"
-          tag_name: ${{ github.ref_name }}
-          name: "Release ${{ github.ref_name }}"
+          tag_name: v${{ needs.build.outputs.version }}
+          name: "Release v${{ needs.build.outputs.version }}"
           draft: false
           prerelease: false
         env:
