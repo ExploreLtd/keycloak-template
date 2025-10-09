@@ -312,8 +312,13 @@ button[type="submit"]:disabled {
 /* IDP Link Confirm Page - Force purple buttons */
 #kc-register-form button,
 #kc-idp-review-profile-form button,
-form button[name="submitAction"] {
+form button[name="submitAction"],
+button#updateProfile,
+button#linkAccount,
+.login-pf button[type="submit"],
+.login-pf-page button[type="submit"] {
   background-color: var(--primary-color) !important;
+  background-image: none !important;
   border: none !important;
   border-radius: 8px !important;
   color: var(--white) !important;
@@ -326,20 +331,34 @@ form button[name="submitAction"] {
   cursor: pointer !important;
   width: 100% !important;
   margin-top: 1rem !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 #kc-register-form button:hover,
 #kc-idp-review-profile-form button:hover,
-form button[name="submitAction"]:hover {
+form button[name="submitAction"]:hover,
+button#updateProfile:hover,
+button#linkAccount:hover,
+.login-pf button[type="submit"]:hover,
+.login-pf-page button[type="submit"]:hover {
   background-color: var(--primary-hover) !important;
+  background-image: none !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 12px rgba(160, 36, 213, 0.25) !important;
 }
 
 #kc-register-form button:active,
 #kc-idp-review-profile-form button:active,
-form button[name="submitAction"]:active {
+form button[name="submitAction"]:active,
+button#updateProfile:active,
+button#linkAccount:active,
+.login-pf button[type="submit"]:active,
+.login-pf-page button[type="submit"]:active {
+  background-color: var(--primary-color) !important;
+  background-image: none !important;
   transform: translateY(0) !important;
+  box-shadow: none !important;
 }
 
 /* Focus Visible for Accessibility */

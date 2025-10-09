@@ -13,6 +13,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const MyExtraPage1 = lazy(() => import("./pages/MyExtraPage1"));
 const MyExtraPage2 = lazy(() => import("./pages/MyExtraPage2"));
 const Info = lazy(() => import("keycloakify/login/pages/Info"));
+const LoginIdpLinkConfirm = lazy(() => import("./pages/LoginIdpLinkConfirm"));
 
 // This is like adding classes to theme.properties 
 // https://github.com/keycloak/keycloak/blob/11.0.3/themes/src/main/resources/theme/keycloak/login/theme.properties
@@ -48,8 +49,9 @@ export default function KcApp(props: { kcContext: KcContext; }) {
                     case "register.ftl": return <Register {...{ kcContext, i18n, Template, classes }} doUseDefaultCss={true} />;
                     case "register-user-profile.ftl": return <RegisterUserProfile {...{ kcContext, i18n, Template, classes }} doUseDefaultCss={true} />
                     case "terms.ftl": return <Terms {...{ kcContext, i18n, Template, classes }} doUseDefaultCss={true} />;
+                    case "login-idp-link-confirm.ftl": return <LoginIdpLinkConfirm {...{ kcContext, i18n, Template, classes }} doUseDefaultCss={true} />;
                     // Removes those pages in you project. They are included to show you how to implement keycloak pages
-                    // that are not yes implemented by Keycloakify. 
+                    // that are not yes implemented by Keycloakify.
                     // See: https://docs.keycloakify.dev/limitations#some-pages-still-have-the-default-theme.-why
                     case "my-extra-page-1.ftl": return <MyExtraPage1 {...{ kcContext, i18n, Template, classes }} doUseDefaultCss={true} />;
                     case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, i18n, Template, classes }} doUseDefaultCss={true} />;
