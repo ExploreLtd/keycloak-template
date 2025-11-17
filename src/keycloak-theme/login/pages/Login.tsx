@@ -5,6 +5,7 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import { useGetClassName } from "keycloakify/login/lib/useGetClassName";
 import type { KcContext } from "../kcContext";
 import type { I18n } from "../i18n";
+import { getIdpIcon } from "../IdpIcons";
 
 const my_custom_param = new URL(window.location.href).searchParams.get(
   "my_custom_param"
@@ -203,13 +204,12 @@ export default function Login(
                 />
                 <input
                   tabIndex={4}
-                  //   className={clsx(
-                  //     getClassName("kcButtonClass"),
-                  //     getClassName("kcButtonPrimaryClass"),
-                  //     getClassName("kcButtonBlockClass"),
-                  //     getClassName("kcButtonLargeClass")
-                  //   )}
-                  className={"test"}
+                  className={clsx(
+                    getClassName("kcButtonClass"),
+                    getClassName("kcButtonPrimaryClass"),
+                    getClassName("kcButtonBlockClass"),
+                    getClassName("kcButtonLargeClass")
+                  )}
                   name="login"
                   id="kc-login"
                   type="submit"
@@ -225,31 +225,29 @@ export default function Login(
             id="kc-social-providers"
             className={clsx(
               getClassName("kcFormSocialAccountContentClass"),
-              getClassName("kcFormSocialAccountClass")
+              getClassName("kcFormSocialAccountClass"),
+              "modern-social-providers"
             )}
           >
-            <ul
-              className={clsx(
-                getClassName("kcFormSocialAccountListClass"),
-                social.providers.length > 4 &&
-                  getClassName("kcFormSocialAccountDoubleListClass")
-              )}
-            >
-              {social.providers.map((p) => (
-                <li
-                  key={p.providerId}
-                  className={getClassName("kcFormSocialAccountListLinkClass")}
-                >
+            <div className="social-divider">
+              <span>Or continue with</span>
+            </div>
+            <div className="social-buttons-grid">
+              {social.providers.map((p) => {
+                const IdpIcon = getIdpIcon(p.providerId);
+                return (
                   <a
+                    key={p.providerId}
                     href={p.loginUrl}
-                    id={`zocial-${p.alias}`}
-                    className={clsx("zocial", p.providerId)}
+                    id={`social-${p.alias}`}
+                    className={clsx("modern-social-btn", `social-${p.providerId.toLowerCase()}`)}
                   >
-                    <span>{p.displayName}</span>
+                    <IdpIcon className="social-icon" />
+                    <span className="social-text">{p.displayName}</span>
                   </a>
-                </li>
-              ))}
-            </ul>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

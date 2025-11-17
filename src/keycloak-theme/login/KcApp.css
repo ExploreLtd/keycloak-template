@@ -98,8 +98,16 @@ input[type="submit"],
 button[type="submit"],
 .btn.btn-primary,
 .pf-c-button.pf-m-primary,
-button.pf-c-button {
+button.pf-c-button,
+.kcButtonClass,
+input.kcButtonPrimaryClass,
+button.kcButtonPrimaryClass,
+#kc-login,
+#kc-form-login input[type="submit"],
+input.kcButtonClass.kcButtonPrimaryClass,
+button.kcButtonClass.kcButtonPrimaryClass {
   background-color: var(--primary-color) !important;
+  background-image: none !important;
   border: none !important;
   border-radius: 8px !important;
   color: var(--white) !important;
@@ -112,6 +120,8 @@ button.pf-c-button {
   cursor: pointer !important;
   width: 100% !important;
   margin-top: 1rem !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 .btn-primary:hover,
@@ -120,8 +130,15 @@ input[type="submit"]:hover,
 button[type="submit"]:hover,
 .btn.btn-primary:hover,
 .pf-c-button.pf-m-primary:hover,
-button.pf-c-button:hover {
+button.pf-c-button:hover,
+input.kcButtonPrimaryClass:hover,
+button.kcButtonPrimaryClass:hover,
+#kc-login:hover,
+#kc-form-login input[type="submit"]:hover,
+input.kcButtonClass.kcButtonPrimaryClass:hover,
+button.kcButtonClass.kcButtonPrimaryClass:hover {
   background-color: var(--primary-hover) !important;
+  background-image: none !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 12px rgba(160, 36, 213, 0.25) !important;
 }
@@ -132,8 +149,17 @@ input[type="submit"]:active,
 button[type="submit"]:active,
 .btn.btn-primary:active,
 .pf-c-button.pf-m-primary:active,
-button.pf-c-button:active {
+button.pf-c-button:active,
+input.kcButtonPrimaryClass:active,
+button.kcButtonPrimaryClass:active,
+#kc-login:active,
+#kc-form-login input[type="submit"]:active,
+input.kcButtonClass.kcButtonPrimaryClass:active,
+button.kcButtonClass.kcButtonPrimaryClass:active {
+  background-color: var(--primary-color) !important;
+  background-image: none !important;
   transform: translateY(0) !important;
+  box-shadow: none !important;
 }
 
 /* Secondary/Link Styles */
@@ -189,7 +215,151 @@ input[type="radio"]:checked {
   margin-bottom: 1.5rem !important;
 }
 
-/* Social Login Buttons */
+/* Modern Social Login Buttons */
+.modern-social-providers {
+  width: 100%;
+}
+
+.social-divider {
+  position: relative;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 70px);
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.social-divider::before {
+  left: 0;
+}
+
+.social-divider::after {
+  right: 0;
+}
+
+.social-divider span {
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 400;
+  background-color: var(--white);
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.social-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.modern-social-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 12px 20px !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  background-color: var(--white) !important;
+  color: var(--text-dark) !important;
+  font-family: var(--font-family-base) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  position: relative !important;
+}
+
+.modern-social-btn:hover {
+  border-color: var(--primary-color) !important;
+  background-color: var(--primary-light) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.modern-social-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+.modern-social-btn .social-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.modern-social-btn .social-text {
+  font-family: var(--font-family-base) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: var(--text-dark) !important;
+}
+
+/* Specific hover effects for different providers */
+.modern-social-btn.social-google:hover {
+  border-color: #4285F4 !important;
+  background-color: rgba(66, 133, 244, 0.05) !important;
+}
+
+.modern-social-btn.social-facebook:hover {
+  border-color: #1877F2 !important;
+  background-color: rgba(24, 119, 242, 0.05) !important;
+}
+
+.modern-social-btn.social-github:hover {
+  border-color: #24292F !important;
+  background-color: rgba(36, 41, 47, 0.05) !important;
+}
+
+.modern-social-btn.social-microsoft:hover,
+.modern-social-btn.social-azure:hover {
+  border-color: #00A4EF !important;
+  background-color: rgba(0, 164, 239, 0.05) !important;
+}
+
+.modern-social-btn.social-apple:hover {
+  border-color: #000000 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.modern-social-btn.social-twitter:hover,
+.modern-social-btn.social-x:hover {
+  border-color: #000000 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.modern-social-btn.social-linkedin:hover {
+  border-color: #0A66C2 !important;
+  background-color: rgba(10, 102, 194, 0.05) !important;
+}
+
+.modern-social-btn.social-gitlab:hover {
+  border-color: #FC6D26 !important;
+  background-color: rgba(252, 109, 38, 0.05) !important;
+}
+
+/* Grid layout for multiple providers */
+@media (min-width: 640px) {
+  .social-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+/* Old social styles - keeping for backward compatibility */
 .kc-social-providers {
   margin-top: 2rem !important;
 }
@@ -304,9 +474,16 @@ p, span, div, td, li {
 .btn-primary:disabled,
 .btn-lg:disabled,
 input[type="submit"]:disabled,
-button[type="submit"]:disabled {
+button[type="submit"]:disabled,
+#kc-login:disabled,
+#kc-form-login input[type="submit"]:disabled,
+input.kcButtonClass.kcButtonPrimaryClass:disabled,
+button.kcButtonClass.kcButtonPrimaryClass:disabled {
+  background-color: var(--primary-color) !important;
+  background-image: none !important;
   opacity: 0.6 !important;
   cursor: not-allowed !important;
+  box-shadow: none !important;
 }
 
 /* IDP Link Confirm Page - Force purple buttons */
