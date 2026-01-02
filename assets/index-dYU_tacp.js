@@ -1,0 +1,1 @@
+import{p as a,q as s}from"./index-D9neplkO.js";import{b as k}from"./index-D9neplkO.js";function x(t){const{mockPageId:e,mockData:o}=t??{},{getKcContext:c}=a({mockData:o}),{kcContext:n}=c({mockPageId:e});return{kcContext:n}}export{a as createGetKcContext,k as createUseI18n,s as default,x as getKcContext};
